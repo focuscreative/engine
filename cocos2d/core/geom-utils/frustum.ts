@@ -181,7 +181,7 @@ export class frustum {
         // normalize planes
         for (let i = 0; i < 6; i++) {
             const pl = this.planes[i];
-            const invDist = 1 / pl.n.length();
+            const invDist = 1 / pl.n.mag();
             Vec3.multiplyScalar(pl.n, pl.n, invDist);
             pl.d *= invDist;
         }
